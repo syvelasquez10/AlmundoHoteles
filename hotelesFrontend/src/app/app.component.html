@@ -1,0 +1,62 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="header">
+    <img src="../assets/images/logo-almundo.svg" class="header"/>
+</div>
+<div class="container-fluid content">
+   <div class="row">
+     <div class="col-xs-12 col-md-3 gridList">
+        <div class="card simpleCard">
+          <strong>Filtros</strong>
+        </div>
+        <div class="card simpleCard">
+          <p><img src="../assets/icons/filters/search.svg" class="search"/>
+          Nombre hotel</p>
+            <p><input type="text" class="inputBusqueda" placeholder="Ingresa el nombre del hotel" id="name" (keyup)="buscarPorNombre($event)"/> <button class="botonBusqueda" type="submit">Aceptar</button>
+            </p>
+        </div>
+        <div class="card simpleCard">
+          <p><img src="../assets/icons/filters/star.svg" class="search"/>
+              Estrellas</p>
+          <p style="color: black; font-size: 12px;"> <input type="checkbox" value="todas" checked/> <strong> Todas las estrellas</strong></p>
+          <p> <input type="checkbox" value="5" (keyup)="filtrarEstrellas($event)"/> <img style="width: 13px;" src="../assets/icons/filters/star.svg"/> <img style="width: 13px;" src="../assets/icons/filters/star.svg"/> <img style="width: 13px;" src="../assets/icons/filters/star.svg" /> <img style="width: 13px;" src="../assets/icons/filters/star.svg" /> <img style="width: 13px;" src="../assets/icons/filters/star.svg"/></p>
+          <p> <input type="checkbox" value="4" (keyup)="filtrarEstrellas($event)"/> <img style="width: 13px;" src="../assets/icons/filters/star.svg"/> <img style="width: 13px;" src="../assets/icons/filters/star.svg"/> <img style="width: 13px;" src="../assets/icons/filters/star.svg" /> <img style="width: 13px;" src="../assets/icons/filters/star.svg" /> </p>
+          <p> <input type="checkbox" value="3" (keyup)="filtrarEstrellas($event)"/> <img style="width: 13px;" src="../assets/icons/filters/star.svg"/> <img style="width: 13px;" src="../assets/icons/filters/star.svg"/> <img style="width: 13px;" src="../assets/icons/filters/star.svg" /> </p>
+          <p> <input type="checkbox" value="2" (keyup)="filtrarEstrellas($event)"/> <img style="width: 13px;" src="../assets/icons/filters/star.svg"/> <img style="width: 13px;" src="../assets/icons/filters/star.svg"/></p>
+          <p> <input type="checkbox" value="1" (keyup)="filtrarEstrellas($event)"/> <img style="width: 13px;" src="../assets/icons/filters/star.svg"/></p>
+
+   
+        </div>
+     </div>
+     <div class="col-xs-12 col-md-9 gridList">
+        <div class="card cardHoteles" *ngFor="let hotel of hoteles">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-4">
+                      <img class="imgHotel" src="../assets/images/hotels/{{hotel.image}}"/>
+                  </div>
+                  <div class="col-md-4">
+                      <div>{{hotel.name}}</div>
+                      <br>
+                      <div>
+                        <p><img *ngFor="let star of crearArrayEstrellas(hotel.stars)" src="../assets/icons/filters/star.svg" class="amenities"/></p>
+                      </div>
+                      <br>
+                      <div>
+                          <p><img *ngFor="let amenity of hotel.amenities" src="../assets/icons/amenities/{{amenity}}.svg" class="amenities"/></p>
+                      </div>
+                  </div>
+                  <div class="col-md-4 datosCard">
+                    <div class="line"></div>
+                    <div class="textoPrecio">Precio por noche por habitación</div>
+                    <div class="precio">ARS <strong class="precioNumero">{{hotel.price}}</strong></div>
+                    <button class="btn btn-primary button">Ver hotel</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+   </div>
+</div>
+
+

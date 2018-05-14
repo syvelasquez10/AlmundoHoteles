@@ -1,0 +1,91 @@
+.header {
+    background-color: #003a77;
+    padding: 10px;
+}
+.search {
+    display: inline;
+    width: 10px;
+    filter: #003a77;
+}
+.amenities {
+    display: inline;
+    width: 20px;
+    margin-right: 10px;
+}
+.content {
+    color: #0057a1;
+    font-family: 'Lato', sans-serif;
+    background-color: #f4f4f4;
+}
+.gridList {
+    margin-top: 5vh;
+    padding-left: 3vw; 
+    padding-right: 2vw;
+}
+.simpleCard{
+    background-color: white;
+    padding: 10px;
+}
+.cardHoteles {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.imgHotel {
+    height: 100%;
+    width: 100%;
+    margin-right: 10%;
+
+}
+
+.line {   
+    position: left;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 1px dashed #f4f4f4;
+}
+
+.datosCard {
+    text-align: center;
+}
+
+.textoPrecio {
+    color: grey;
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+
+    font-size: 13px;
+}
+
+.precio {
+    color: #e56613;
+    margin: 5px;
+    font-size: 21px;
+}
+
+.precioNumero {
+    font-size: 25px;
+}
+
+.button {
+    background-color:  #003a77;
+    width: 70%;
+    font-size: 20px;
+}
+
+.inputBusqueda {
+    width: 60%;
+    display: inline;
+    margin-right: 13px;
+}
+
+.botonBusqueda {
+    display: inline;
+    width: 30%;
+    font-size: 15px;
+    background-color:  #003a77;
+    color: white;
+}

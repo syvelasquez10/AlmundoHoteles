@@ -1,5 +1,8 @@
 const express = require('express')
 const app = express()
+var cors = require('cors')
+
+app.use(cors())
 
 var bd;
 
@@ -52,7 +55,7 @@ app.get('/cargar_bd', function (req, res) {
 app.get('/hoteles', function (req, res) {
     Hotel.find({}, function(err, docs) {
         if (!err){ 
-            res.send(docs);
+            res.send(JSON.stringify(docs));
         } else {
             console.log(err);
         }
@@ -63,7 +66,17 @@ app.get('/hoteles/:name', function (req, res) {
     var re = new RegExp(req.params.name,"gi");
     Hotel.find({name: re}, function(err, docs) {
         if (!err){ 
-            res.send(docs);
+            res.send(JSON.stringify(docs));
+        } else {
+            console.log(err);
+        }
+    });
+});
+
+app.get('/hoteles/stars/:cantidad', function (req, res) {
+    Hotel.find({stars: req.params.cantidad}, function(err, docs) {
+        if (!err){ 
+            res.send(JSON.stringify(docs));
         } else {
             console.log(err);
         }
